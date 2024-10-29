@@ -18,9 +18,9 @@ class ConferenceFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->title,
+            'title' => $this->faker->sentence,
             'description' => $this->faker->paragraph(5),
-            'date' => $this->faker->date('Y-m-d', '2025-09-09'),
+            'date' => $this->faker->dateTimeBetween('-1month', '+1month'),
             'lecturers' => json_encode([
                 [
                     'name' => $this->faker->name,
