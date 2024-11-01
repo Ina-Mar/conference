@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Conference extends Model
+class Registration extends Model
 {
     use HasFactory;
-    protected $casts = [
-        'lecturers' => 'array',
-        'programme' => 'array',
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'conference_id'
     ];
-
 }

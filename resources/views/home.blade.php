@@ -1,5 +1,9 @@
 @extends('app')
 @section('content')
+    <x-heading-card>
+        <h1 class="text-white mt-4 mb-4">Find Your Conference</h1>
+        <h1 class="text-white display-1 mb-5">Conference Registration</h1>
+    </x-heading-card>
     <div class="container-fluid px-0 py-5">
        @include('partials/_checkout')
         <div class="owl-carousel courses-carousel">
@@ -48,7 +52,7 @@
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="{{asset('images/feature.jpg')}}" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="{{asset('images/feature.jpg')}}" alt="" style="object-fit: cover;">
                     </div>
                 </div>
             </div>

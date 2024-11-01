@@ -19,6 +19,8 @@ return new class extends Migration
             $table->json('lecturers')->nullable();
             $table->json('programme')->nullable();
             $table->string('location');
+            $table->string('contact_person')->nullable();
+            $table->string('contact_email')->nullable();
             $table->timestamps();
         });
     }
