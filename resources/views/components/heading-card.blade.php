@@ -9,9 +9,9 @@
         {{$slot}}
         <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
             <div class="input-group">
-                <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="Keyword">
+                <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="{{__('trans.Keyword')}}">
                 <div class="input-group-append">
-                    <button class="btn btn-secondary px-4 px-lg-5">Search</button>
+                    <button class="btn btn-secondary px-4 px-lg-5">{{__('trans.Search')}}</button>
                 </div>
             </div>
         </div>

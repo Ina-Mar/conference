@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="w-100 bg-white text-center p-4" >
-                <a class="btn btn-primary" href="/customer/conference/{{$conference->id}}">Register</a>
+                <a class="btn btn-primary" href="/customer/conference/{{$conference->id}}">{{__('trans.Register')}}</a>
             </div>
         </div>
     </div>

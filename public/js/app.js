@@ -3471,7 +3471,7 @@ __webpack_require__.r(__webpack_exports__);
       smartSpeed: 1500,
       loop: true,
       dots: false,
-      nav: true,
+      nav: false,
       responsive: {
         0: {
           items: 1

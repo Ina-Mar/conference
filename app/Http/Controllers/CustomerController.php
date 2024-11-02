@@ -25,6 +25,12 @@ class CustomerController extends Controller
         return view('customer.create', compact('conferences'));
     }
     public function store(UserRegistrationRequest $request) :RedirectResponse {
+        if(app()->getLocale() == 'lt') {
+            $message = 'Registracija sėkminga!';
+        }
+        else {
+            $message = 'Registration was successful!';
+        }
         $validated = $request->validated();
         Registration::query()->create([
             'first_name' => $validated['first_name'],
@@ -33,6 +39,6 @@ class CustomerController extends Controller
             'conference_id' => $validated['conference_id']
 
         ])->save();
-        return redirect('/customer')->with('message', 'Registration was successful!');
+        return redirect('/customer')->with('message', $message);
     }
 }

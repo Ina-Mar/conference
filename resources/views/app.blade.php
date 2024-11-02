@@ -19,23 +19,18 @@
                 <small><i class="fa fa-envelope mr-2"></i>info@conference.com</small>
             </div>
         </div>
+
         <div class="col-lg-6 text-center text-lg-right">
             <div class="d-inline-flex align-items-center">
-                <a class="text-white px-2" href="">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a class="text-white px-2" href="">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a class="text-white px-2" href="">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a class="text-white px-2" href="">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a class="text-white pl-2" href="">
-                    <i class="fab fa-youtube"></i>
-                </a>
+                <form action="{{ route('locale.change') }}" method="POST">
+                    @csrf
+                    <select class="form-select-sm" name="locale" onchange="this.form.submit()">
+                        <option value="en"{{ app()->getLocale() == 'en' ? ' selected' : '' }}>English</option>
+                        <option value="lt"{{ app()->getLocale() == 'lt' ? ' selected' : '' }}>Lietuvių</option>
+                        <!-- Additional language options -->
+                    </select>
+                </form>
+
             </div>
         </div>
     </div>
@@ -47,19 +42,18 @@
 <div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
         <a href="/" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3"></i>Conferences</h1>
+            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3"></i>{{ __('trans.Conferences') }}</h1>
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mx-auto py-0">
-                <a href="/" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">Conferences</a>
-                <a href="contact.html" class="nav-item nav-link">About</a>
+                <a href="/" class="nav-item nav-link active">{{__('trans.Home') }}</a>
+                <a href="/customer" class="nav-item nav-link">{{ __('trans.Conferences') }}</a>
             </div>
-            <a href="login/php" class="btn btn-primary py-2 mr-2 px-4 d-none d-lg-block">Log In</a>
-            <a href="register/php" class="btn btn-primary py-2 px-4 d-none d-lg-block">Register</a>
+            <a href="login/php" class="btn btn-primary py-2 mr-2 px-4 d-none d-lg-block">{{__('trans.Employee')}}</a>
+            <a href="register/php" class="btn btn-primary py-2 px-4 d-none d-lg-block">{{__('trans.Admin')}}</a>
         </div>
     </nav>
 </div>
@@ -76,7 +70,7 @@
         <div class="row">
             <div class="col-md-6 mb-5">
                 <a href="/" class="navbar-brand">
-                    <h1 class="mt-n2 text-uppercase text-white"><i class="fa fa-book-reader mr-3"></i>Conferences</h1>
+                    <h1 class="mt-n2 text-uppercase text-white"><i class="fa fa-book-reader mr-3"></i>{{ __('trans.Conferences') }}</h1>
                 </a>
                 <p class="m-0">Accusam nonumy clita sed rebum kasd eirmod elitr. Ipsum ea lorem at et diam est, tempor rebum ipsum sit ea tempor stet et consetetur dolores. Justo stet diam ipsum lorem vero clita diam</p>
             </div>
@@ -84,7 +78,7 @@
         </div>
         <div class="row">
             <div class="col-md-4 mb-5">
-                <h3 class="text-white mb-4">Get In Touch</h3>
+                <h3 class="text-white mb-4">{{__('trans.Get In Touch')}}</h3>
                 <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
                 <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
                 <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
@@ -96,7 +90,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-5">
-                <h3 class="text-white mb-4">Conferences</h3>
+                <h3 class="text-white mb-4">{{ __('trans.Conferences') }}</h3>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Web Design</a>
                     <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Apps Design</a>
@@ -106,13 +100,13 @@
                 </div>
             </div>
             <div class="col-md-4 mb-5">
-                <h3 class="text-white mb-4">Quick Links</h3>
+                <h3 class="text-white mb-4">{{__('trans.Quick Links')}}</h3>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a>
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Terms & Condition</a>
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Regular FAQs</a>
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Help & Support</a>
-                    <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>{{__('trans.Privacy Policy')}}</a>
+                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>{{__('trans.Terms & Condition')}}</a>
+                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>{{__('trans.Regular FAQs')}}</a>
+                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>{{__('trans.Help & Support')}}</a>
+                    <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>{{__('trans.Contact')}}</a>
                 </div>
             </div>
         </div>
@@ -122,7 +116,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0">Copyright &copy; <a class="text-white" href="#">Conference Registration</a>. All Rights Reserved.
+                <p class="m-0">Copyright &copy; <a class="text-white" href="/">{{__('trans.Conference Registration')}}</a>.
                 </p>
             </div>
 

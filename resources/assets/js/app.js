@@ -48,7 +48,7 @@ import './bootstrap';
             smartSpeed: 1500,
             loop: true,
             dots: false,
-            nav: true,
+            nav: false,
             responsive: {
                 0: {
                     items: 1
