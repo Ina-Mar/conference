@@ -52,8 +52,8 @@
                 <a href="/" class="nav-item nav-link active">{{__('trans.Home') }}</a>
                 <a href="/customer" class="nav-item nav-link">{{ __('trans.Conferences') }}</a>
             </div>
-            <a href="login/php" class="btn btn-primary py-2 mr-2 px-4 d-none d-lg-block">{{__('trans.Employee')}}</a>
-            <a href="register/php" class="btn btn-primary py-2 px-4 d-none d-lg-block">{{__('trans.Admin')}}</a>
+            <a href="/employee" class="btn btn-primary py-2 mr-2 px-4 d-none d-lg-block">{{__('trans.Employee')}}</a>
+            <a href="/admin" class="btn btn-primary py-2 px-4 d-none d-lg-block">{{__('trans.Admin')}}</a>
         </div>
     </nav>
 </div>
@@ -81,7 +81,7 @@
                 <h3 class="text-white mb-4">{{__('trans.Get In Touch')}}</h3>
                 <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
                 <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                <p><i class="fa fa-envelope mr-2"></i>info@conference.com</p>
                 <div class="d-flex justify-content-start mt-4">
                     <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-twitter"></i></a>
                     <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-facebook-f"></i></a>

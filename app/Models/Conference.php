@@ -8,9 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Conference extends Model
 {
     use HasFactory;
+
+
     protected $casts = [
         'lecturers' => 'array',
         'programme' => 'array',
     ];
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
 }

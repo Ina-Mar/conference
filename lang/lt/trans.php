@@ -36,4 +36,6 @@ return [
     'Choose Conference'=>'Pasirinkite konferenciją',
     'Keyword'=>'Raktažodis',
     'Search'=>'Ieškoti',
+    'Conference List'=>'Konferencijų sąrašas',
+    'Participants'=>'Dalyviai',
 ];

@@ -14,7 +14,9 @@ use Illuminate\View\View;
 class CustomerController extends Controller
 {
     public function index() :View {
-        $conferences = Conference::all()->sortByDesc('date');
+        $conferences = Conference::query()->
+        whereDate('date', '>=', date('Y-m-d'))->
+        orderBy('date', 'desc')->get();
         return view('customer.index', compact('conferences'));
     }
     public function show(Conference $conference) :View {

@@ -36,4 +36,6 @@ return [
     'Choose Conference'=>'Choose Conference',
     'Keyword'=>'Keyword',
     'Search'=>'Search',
+    'Conference List' =>'Conference List',
+    'Participants'=>'Participants',
 ];
