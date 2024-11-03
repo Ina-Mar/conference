@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Conference;
+use App\Models\Registration;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -21,5 +22,6 @@ class DatabaseSeeder extends Seeder
             //'email' => 'test@example.com',
         //]);
         Conference::factory(10)->create();
+        Registration::factory(20)->create();
     }
 }

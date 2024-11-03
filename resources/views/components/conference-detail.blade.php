@@ -9,7 +9,9 @@
                     <p>{{$conference->description}}</p>
                 </div>
 
-                <h2 class="mb-3">{{__('trans.Speakers')}}</h2>
+
+                @if(!empty($conference->lecturers))
+                    <h2 class="mb-3">{{__('trans.Speakers')}}</h2>
                 <!-- Team Start -->
                 <div class="container-fluid py-5">
                     <div class="container py-2">
@@ -17,13 +19,14 @@
                             @foreach($conference->lecturers as $lecturer)
                                 <x-speaker-card :lecturer="$lecturer" />
                             @endforeach
-
                         </div>
                     </div>
                 </div>
                 <!-- Team End -->
+                @endif
 
-                <h2 class="mb-3">{{__('trans.Programme')}}</h2>
+                @if(!empty($conference->programme))
+                    <h2 class="mb-3">{{__('trans.Programme')}}</h2>
                 <div class="container-fluid py-5">
                     <div class="container py-2">
                         <table class="table">
@@ -38,6 +41,7 @@
                         </table>
                     </div>
                 </div>
+                @endif
 
 
 

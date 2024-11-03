@@ -2,6 +2,9 @@
 @section('content')
     <div class="container-fluid py-5">
         <div class="container py-5">
+            <a href="/admin" class="navbar-brand ml-lg-3">
+                <h4 class="m-0 text-uppercase text-primary"><i class="fa fa-arrow-left mr-3"></i>{{ __('trans.Back') }}</h4>
+            </a>
             <div class="row mx-0 justify-content-center pt-2 pb-3">
                 <div class="col-lg-6">
                     <div class="section-title text-center position-relative mb-4">
@@ -18,7 +21,6 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">{{__('trans.First Name')}}</th>
                     <th scope="col">{{__('trans.Last Name')}}</th>
                     <th scope="col">{{__('trans.Email')}}</th>
@@ -27,7 +29,6 @@
                 <tbody>
                 @foreach($users as $user)
                     <tr>
-                        <th scope="row">{{$user->id}}</th>
                         <td>{{$user->first_name}}</td>
                         <td>{{$user->last_name}}</td>
                         <td>{{$user->email}}</td>
@@ -36,7 +37,7 @@
                             <form method="POST" action="/users/{{$user->id}}/delete">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-primary">{{__('trans.Delete')}}</button>
+                                <button class="btn btn-danger">{{__('trans.Delete')}}</button>
 
                             </form>
                         </td>

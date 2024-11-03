@@ -1,7 +1,7 @@
 @props(['conference'])
 <div class="col-lg-4 col-md-6 pb-4">
     <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="{{request()->path()}}/conference/{{$conference->id}}">
-        <img class="img-fluid" src="{{asset('images/courses-2.jpg')}}" alt="">
+        <img class="img-fluid" src="{{$conference->photo ? asset('storage/' . $conference->photo) : asset('images/courses-2.jpg')}}" alt="">
         <div class="courses-text">
 
             <h4 class="text-center text-white px-3">{{$conference->title}}</h4>

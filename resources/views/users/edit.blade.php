@@ -2,6 +2,9 @@
 @section('content')
     <section class="vh-100 gradient-custom">
         <div class="container py-5 h-100">
+            <a href="/users" class="navbar-brand ml-lg-3">
+                <h4 class="m-0 text-uppercase text-primary"><i class="fa fa-arrow-left mr-3"></i>{{ __('trans.Back') }}</h4>
+            </a>
             <div class="row justify-content-center align-items-center h-100">
                 <div class="col-12 col-lg-9 col-xl-7">
                     <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
