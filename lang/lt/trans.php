@@ -38,4 +38,9 @@ return [
     'Search'=>'Ieškoti',
     'Conference List'=>'Konferencijų sąrašas',
     'Participants'=>'Dalyviai',
+    'Dashboard'=>'Valdymo skydelis',
+    'Users'=>'Naudotojai',
+    'Edit'=>'Redaguoti',
+    'Delete'=>'Trinti',
+    'Edit User'=>'Keisti naudotojo duomenis',
 ];

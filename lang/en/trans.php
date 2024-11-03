@@ -38,4 +38,9 @@ return [
     'Search'=>'Search',
     'Conference List' =>'Conference List',
     'Participants'=>'Participants',
+    'Dashboard'=>'Dashboard',
+    'Users'=>'Users',
+    'Edit'=>'Edit',
+    'Delete'=>'Delete',
+    'Edit User'=>'Edit User',
 ];
