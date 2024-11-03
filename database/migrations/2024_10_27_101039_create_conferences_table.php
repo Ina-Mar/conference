@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('contact_person')->nullable();
             $table->string('contact_email')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

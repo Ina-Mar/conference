@@ -30,9 +30,25 @@ class ConferenceFactory extends Factory
                     'name' => $this->faker->name,
                     'position' => $this->faker->words(4, true),
                 ],
+                [
+                    'name' => $this->faker->name,
+                    'position' => $this->faker->words(4, true),
+                ],
+                [
+                    'name' => $this->faker->name,
+                    'position' => $this->faker->words(4, true),
+                ],
 
             ],
             'programme' => [
+                [
+                    'time' => $this->faker->time('H:i', '24:00:00'),
+                    'event' => $this->faker->sentence()
+                ],
+                [
+                    'time' => $this->faker->time('H:i', '24:00:00'),
+                    'event' => $this->faker->sentence()
+                ],
                 [
                     'time' => $this->faker->time('H:i', '24:00:00'),
                     'event' => $this->faker->sentence()
