@@ -8,9 +8,9 @@
             <div class="row mx-0 justify-content-center pt-2 pb-3">
                 <div class="col-lg-6">
                     <div class="section-title text-center position-relative mb-4">
-                        @if(session()->has('user_message'))
+                        @if(session()->has('conference_message'))
                             <div x-data="{ show: true }" x-init="setTimeout(() => show=false, 3000)" x-show="show" class="position-relative text-black py-3">
-                                <p>{{session('user_message')}}</p>
+                                <p>{{session('conference_message')}}</p>
                             </div>
                         @endif
                         <h1 class="display-4">{{__('trans.Conferences')}}</h1>

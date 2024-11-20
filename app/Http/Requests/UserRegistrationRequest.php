@@ -22,10 +22,10 @@ class UserRegistrationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
-            'conference_id' => ['required', 'string', 'max:255']
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|unique:users|email',
+            'password' => 'required|string|min:8|confirmed',
         ];
     }
 }
