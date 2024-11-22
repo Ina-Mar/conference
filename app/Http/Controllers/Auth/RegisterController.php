@@ -13,16 +13,18 @@ use Illuminate\View\View;
 
 class RegisterController extends Controller
 {
-    public function create() :View {
+    public function create() :View  {
         return view('auth.register');
     }
     public function register(UserRegistrationRequest $request) :RedirectResponse {
+
         $validated = $request->validated();
         $validated['password'] = Hash::make($validated['password']);
         $user = new User();
         $user->fill($validated);
         $user->save();
         Auth::login($user);
+        $user->assignRole('user');
         return redirect('/');
 
     }

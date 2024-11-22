@@ -19,7 +19,12 @@ class LoginController extends Controller
         $validated = $request->validate(['email' => 'required', 'password' => 'required']);
         if (Auth::attempt($validated)) {
             $request->session()->regenerate();
-            return redirect('/');
+            if (Auth::user()->hasRole('admin')) {
+                return redirect()->route('admin');
+            }
+            else {
+                return redirect()->route('home');
+            }
         }
         return back()->withErrors(['email' => trans('auth.failed')]);
     }
