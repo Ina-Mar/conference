@@ -5,7 +5,6 @@ use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Auth;
@@ -31,9 +30,6 @@ Route::post('/conference/{conference}', [CustomerController::class, 'store'])->n
 Route::get('/conference/{conference}', [CustomerController::class, 'show'])->name('conference.show');
 
 Route::post('/locale', LocaleController::class)->name('locale.change');
-
-Route::get('/employee', [EmployeeController::class, 'index']);
-Route::get('/employee/conference/{conference}', [EmployeeController::class, 'show']);
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
 Route::post('register', [RegisterController::class, 'register']);
