@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid py-5">
         <div class="container py-5">
-            <a href="/admin" class="navbar-brand ml-lg-3">
+            <a href="{{route('admin')}}" class="navbar-brand ml-lg-3">
                 <h4 class="m-0 text-uppercase text-primary"><i class="fa fa-arrow-left mr-3"></i>{{ __('trans.Back') }}</h4>
             </a>
             <div class="row mx-0 justify-content-center pt-2 pb-3">
@@ -24,6 +24,7 @@
                     <th scope="col">{{__('trans.First Name')}}</th>
                     <th scope="col">{{__('trans.Last Name')}}</th>
                     <th scope="col">{{__('trans.Email')}}</th>
+                    <th scope="col">{{__('trans.Role')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,9 +33,10 @@
                         <td>{{$user->first_name}}</td>
                         <td>{{$user->last_name}}</td>
                         <td>{{$user->email}}</td>
-                        <td><a href="/users/{{$user->id}}/edit" class="btn btn-primary">{{__('trans.Edit')}}</td>
-                        <td>
-                            <form method="POST" action="/users/{{$user->id}}/delete">
+                        <td class="text-center"><span class="bg-success-subtle px-2 py-2">{{$user->roles[0]['name']}}</span></td>
+                        <td class="text-center"><a href="/admin/users/{{$user->id}}/edit" class="btn btn-primary">{{__('trans.Edit')}}</td>
+                        <td class="text-center">
+                            <form method="POST" action="/admin/users/{{$user->id}}/delete">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger">{{__('trans.Delete')}}</button>

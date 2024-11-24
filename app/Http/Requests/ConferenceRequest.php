@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ConferenceValidationRequest extends FormRequest
+class ConferenceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,17 +22,17 @@ class ConferenceValidationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            [
-                'title' => 'required|string(max:255)',
+
+                'title' => 'required|string|max:255',
                 'description' => 'required|string',
                 'date' => 'required|date',
                 'location' => 'required|string',
-                'contact_person' => 'string|nullable',
-                'contact_email' => 'string|nullable',
-                'photo'=>'file|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                'lecturers'=>'array',
-                'programme'=>'array',
-            ]
+                'contact_person' => 'string|required|max:70',
+                'contact_email' => 'email|required',
+                'photo'=>'file|image|mimes:jpeg,png,jpg,gif,svg|max:2048|nullable',
+                'lecturers'=>'array|nullable',
+                'programme'=>'array|nullable',
+
         ];
     }
 }

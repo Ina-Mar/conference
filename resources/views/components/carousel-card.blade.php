@@ -1,7 +1,7 @@
 @props(['conference'])
 
     <div class="courses-item position-relative">
-        <img class="img-fluid" src="{{$conference->photo ? asset('storage/' . $conference->photo) : asset('images/courses-2.jpg')}}" alt="">
+        <img class="img-fluid" src="{{$conference->photo ? asset('storage/' . $conference->photo) : asset('images/no-conference.jpg')}}" alt="">
         <div class="courses-text">
             <h4 class="text-center text-white px-3">{{$conference->title}}</h4>
             <div class="border-top w-100 mt-3">
@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="w-100 bg-white text-center p-4" >
-                <a class="btn btn-primary" href="/customer/conference/{{$conference->id}}">{{__('trans.Register')}}</a>
+                <a class="btn btn-primary" href="/conference/{{$conference->id}}">{{__('trans.More')}}</a>
             </div>
         </div>
     </div>

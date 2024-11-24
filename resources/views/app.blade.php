@@ -49,11 +49,21 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mx-auto py-0">
-                <a href="/" class="nav-item nav-link active">{{__('trans.Home') }}</a>
-                <a href="/customer" class="nav-item nav-link">{{ __('trans.Conferences') }}</a>
+                <a href="{{route('home')}}" class="nav-item nav-link active">{{__('trans.Home') }}</a>
+                <a href="{{route('conference.index')}}" class="nav-item nav-link">{{ __('trans.Conferences') }}</a>
+
             </div>
-            <a href="/employee" class="btn btn-primary py-2 mr-2 px-4 d-none d-lg-block">{{__('trans.Employee')}}</a>
-            <a href="/admin" class="btn btn-primary py-2 px-4 d-none d-lg-block">{{__('trans.Admin')}}</a>
+            @auth
+                <span class="py-2 px-4 font-weight-bold text-uppercase">{{__('trans.Welcome')}}, {{auth()->user()->first_name}}</span>
+                <form class="form-inline" method="POST" action="/logout">
+                    @csrf
+                    <button type="submit" class="btn btn-primary py-2 px-4 d-none d-lg-block">{{__('trans.Log Out')}}</button>
+                </form>
+            @else
+                <a href="/register" class="btn btn-primary py-2 mr-2 px-4 d-none d-lg-block">{{__('trans.Register')}}</a>
+                <a href="/login" class="btn btn-primary py-2 px-4 d-none d-lg-block">{{__('trans.Log In')}}</a>
+            @endauth
+
         </div>
     </nav>
 </div>
@@ -116,7 +126,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0">Copyright &copy; <a class="text-white" href="/">{{__('trans.Conference Registration')}}</a>.
+                <p class="m-0">Copyright &copy; <a class="text-white" href="/">Ina Martinkutė PIT-21-I-NT</a>.
                 </p>
             </div>
 

@@ -25,18 +25,22 @@ class ConferenceFactory extends Factory
                 [
                     'name' => $this->faker->name,
                     'position' => $this->faker->words(4, true),
+
                 ],
                 [
                     'name' => $this->faker->name,
                     'position' => $this->faker->words(4, true),
+
                 ],
                 [
                     'name' => $this->faker->name,
                     'position' => $this->faker->words(4, true),
+
                 ],
                 [
                     'name' => $this->faker->name,
                     'position' => $this->faker->words(4, true),
+
                 ],
 
             ],

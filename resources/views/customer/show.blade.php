@@ -14,7 +14,35 @@
             <div class="row">
                 <div class="col-lg-8">
                     <x-conference-detail :conference="$conference"/>
+                    @can('view all conferences')
+                        <!--Participants start-->
+                        <h2 class="mb-3">{{__('trans.Participants')}}</h2>
+                        <div class="container-fluid py-5">
+                            <div class="container py-2">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">{{__('trans.First Name')}}</th>
+                                        <th scope="col">{{__('trans.Last Name')}}</th>
+                                        <th scope="col">{{__('trans.Email')}}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($registrations as $registration)
+                                        <tr>
+                                            <td>{{$registration->first_name}}</td>
+                                            <td>{{$registration->last_name}}</td>
+                                            <td>{{$registration->email}}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--participants end-->
+                    @endcan
                 </div>
+
         <div class="col-lg-4 mt-5 mt-lg-0">
             <div class="bg-primary mb-5 py-3">
                 <h3 class="text-white py-3 px-4 m-0">{{__('trans.About')}}</h3>
@@ -34,9 +62,22 @@
                     <h6 class="text-white my-3">{{__('trans.Contact Email')}}</h6>
                     <h6 class="text-white my-3">{{$conference->contact_email}}</h6>
                 </div>
-                <div class="py-3 px-4">
-                    <a class="btn btn-block btn-secondary py-3 px-5" href="/customer/register">{{__('trans.Register')}}</a>
-                </div>
+                @if(auth()->guest())
+                    <div class="py-3 px-4">
+                        <form class="form-inline" method="GET" action="{{route('login')}}">
+                            <button type="submit" class="btn btn-block btn-secondary py-3 px-5">{{__('trans.Register')}}</button>
+                        </form>
+                    </div>
+                @elseif(auth()->check() && auth()->user()->hasRole('user'))
+                    <div class="py-3 px-4">
+                        <form class="form-inline" method="POST" action="/conference/{{$conference->id}}">
+                            @csrf
+                            <button type="submit" class="btn btn-block btn-secondary py-3 px-5">{{__('trans.Register')}}</button>
+                        </form>
+                    </div>
+                @endif
+
+
             </div>
         </div>
             </div>

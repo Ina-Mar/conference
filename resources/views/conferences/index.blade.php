@@ -2,19 +2,19 @@
 @section('content')
     <div class="container-fluid py-5">
         <div class="container py-5">
-            <a href="/admin" class="navbar-brand ml-lg-3">
+            <a href="{{route('admin')}}" class="navbar-brand ml-lg-3">
                 <h4 class="m-0 text-uppercase text-primary"><i class="fa fa-arrow-left mr-3"></i>{{ __('trans.Back') }}</h4>
             </a>
             <div class="row mx-0 justify-content-center pt-2 pb-3">
                 <div class="col-lg-6">
                     <div class="section-title text-center position-relative mb-4">
-                        @if(session()->has('user_message'))
+                        @if(session()->has('conference_message'))
                             <div x-data="{ show: true }" x-init="setTimeout(() => show=false, 3000)" x-show="show" class="position-relative text-black py-3">
-                                <p>{{session('user_message')}}</p>
+                                <p>{{session('conference_message')}}</p>
                             </div>
                         @endif
                         <h1 class="display-4">{{__('trans.Conferences')}}</h1>
-                        <a href="/conferences/create" class="btn btn-outline-primary btn-lg"> {{__('trans.Create New')}}</a>
+                        <a href="{{route('admin.conferences.create')}}" class="btn btn-outline-primary btn-lg"> {{__('trans.Create New')}}</a>
                     </div>
                 </div>
             </div>
@@ -37,11 +37,11 @@
                         <td>{{$conference->location}}</td>
                         <td>{{$conference->contact_person}}</td>
                         <td>{{$conference->contact_email}}</td>
-                        <td><a href="/conferences/{{$conference->id}}/edit" class="btn btn-primary">{{__('trans.Edit')}}</td>
+                        <td><a href="/admin/conferences/{{$conference->id}}/edit" class="btn btn-primary">{{__('trans.Edit')}}</td>
                         <td>
                         @if ($conference->date >= date('Y-m-d'))
 
-                                <form method="POST" action="/conferences/{{$conference->id}}/delete">
+                                <form method="POST" action="/admin/conferences/{{$conference->id}}/delete">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger">{{__('trans.Delete')}}</button>

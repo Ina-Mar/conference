@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
          User::factory(10)->create();
 
         //User::factory()->create([
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
             //'email' => 'test@example.com',
         //]);
         Conference::factory(10)->create();
-        Registration::factory(20)->create();
+        $this->call(RolePermissionSeeder::class);
+        //Registration::factory(20)->create();
     }
 }
