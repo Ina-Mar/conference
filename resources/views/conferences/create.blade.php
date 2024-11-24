@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid py-5">
         <div class="container py-5">
-            <a href="/conferences" class="navbar-brand ml-lg-3">
+            <a href="{{route('admin.conferences')}}" class="navbar-brand ml-lg-3">
                 <h4 class="m-0 text-uppercase text-primary"><i class="fa fa-arrow-left mr-3"></i>{{ __('trans.Back') }}</h4>
             </a>
             <div class="row mx-0 justify-content-center pt-2 pb-3">
@@ -12,7 +12,7 @@
                     </div>
                 </div>
             </div>
-            <form action="/conferences" method="POST" enctype="multipart/form-data">
+            <form action="{{route('admin.conferences.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <x-conference-fields>
                     <div class="col-md-5 mb-3">

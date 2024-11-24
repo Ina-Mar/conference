@@ -32,7 +32,7 @@ class ConferenceController extends Controller
 
 
         Conference::query()->create($validatedData)->save();
-        return redirect('/conferences')->with('conference_message', __('trans.Conference created successfully'));
+        return redirect('/admin/conferences')->with('conference_message', __('trans.Conference created successfully'));
 
     }
     public function edit(Conference $conference) :View {
@@ -62,7 +62,7 @@ class ConferenceController extends Controller
 
         $conference->update($validatedData);
         $conference->save();
-        return redirect('/conferences')->with('conference_message', __('trans.Conference updated successfully'));
+        return redirect('/admin/conferences')->with('conference_message', __('trans.Conference updated successfully'));
     }
     public function destroy(Conference $conference) :RedirectResponse
     {
@@ -73,7 +73,7 @@ class ConferenceController extends Controller
             $message = 'Conference deleted!';
         }
         $conference->delete();
-        return redirect('/conferences')->with('user_message', $message);
+        return redirect('/admin/conferences')->with('user_message', $message);
     }
 
     /**

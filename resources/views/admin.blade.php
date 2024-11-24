@@ -6,8 +6,8 @@
                 <div class="card">
                     <div class="card-header">{{ __('trans.Dashboard') }}</div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="/users" class="btn btn-primary">{{__('trans.Users')}}</a></li>
-                        <li class="list-group-item"><a href="/conferences" class="btn btn-primary">{{__('trans.Conferences')}}</a></li>
+                        <li class="list-group-item"><a href="{{route('admin.users')}}" class="btn btn-primary">{{__('trans.Users')}}</a></li>
+                        <li class="list-group-item"><a href="{{route('admin.conferences')}}" class="btn btn-primary">{{__('trans.Conferences')}}</a></li>
                     </ul>
 
                 </div>

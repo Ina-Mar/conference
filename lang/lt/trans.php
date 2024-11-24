@@ -71,4 +71,10 @@ return [
     'Welcome'=>'Sveiki',
     'Do not have an account?'=>'Neturite paskyros?',
     'Register here'=>'Registruotis čia',
+    'More'=>'Daugiau',
+    'Registration successful!'=>'Registracija sėkminga!',
+    'Role'=>'Rolė',
+    'Edit successfully!'=>'Duomenys pakeisti!',
+    'User deleted!'=>'Naudotojas ištrintas!',
+    'You are already registered!'=>'Jūs jau užsiregistravote!'
 ];

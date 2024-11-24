@@ -13,39 +13,39 @@
                                     @csrf
 
                                     <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="first_name">{{__('trans.First Name')}}<sup class="text-danger">*</sup></label>
                                         <input type="text" id="first_name" name="first_name" value="{{old('first_name')}}" class="form-control form-control-lg" />
-                                        <label class="form-label" for="first_name">{{__('trans.First Name')}}</label>
                                         @error('first_name')
                                         <p class="text-danger text text-sm-left">{{$message}}</p>
                                         @enderror
                                     </div>
                                     <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="last_name">{{__('trans.Last Name')}}<sup class="text-danger">*</sup></label>
                                         <input type="text" id="last_name" name="last_name" value="{{old('last_name')}}" class="form-control form-control-lg" />
-                                        <label class="form-label" for="last_name">{{__('trans.Last Name')}}</label>
                                         @error('last_name')
                                         <p class="text-danger text text-sm-left">{{$message}}</p>
                                         @enderror
                                     </div>
 
                                     <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="email">{{__('trans.Email')}}<sup class="text-danger">*</sup></label>
                                         <input type="email" id="email" name="email" value="{{old('email')}}" class="form-control form-control-lg" />
-                                        <label class="form-label" for="email">{{__('trans.Email')}}</label>
                                         @error('email')
                                         <p class="text-danger text text-sm-left">{{$message}}</p>
                                         @enderror
                                     </div>
 
                                     <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="password">{{__('trans.Password')}}<sup class="text-danger">*</sup></label>
                                         <input type="password" id="password" name="password" value="{{old('password')}}" class="form-control form-control-lg" />
-                                        <label class="form-label" for="password">{{__('trans.Password')}}</label>
                                         @error('password')
                                         <p class="text-danger text text-sm-left">{{$message}}</p>
                                         @enderror
                                     </div>
 
                                     <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="password_confirmation">{{__('trans.Repeat your password')}}<sup class="text-danger">*</sup></label>
                                         <input type="password" id="password_confirmation" name="password_confirmation" class="form-control form-control-lg" />
-                                        <label class="form-label" for="password_confirmation">{{__('trans.Repeat your password')}}</label>
                                         @error('password_confirmation')
                                         <p class="text-danger text text-sm-left">{{$message}}</p>
                                         @enderror

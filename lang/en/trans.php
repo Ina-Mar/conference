@@ -71,4 +71,10 @@ return [
     'Welcome'=>'Welcome',
     'Do not have an account?'=>'Do not have an account?',
     'Register here'=>'Register here',
+    'More'=>'More',
+    'Registration successful!'=>'Registration successful!',
+    'Role'=>'Role',
+    'Edit successfully!'=>'Edit successfully!',
+    'User deleted!'=>'User deleted!',
+    'You are already registered!'=>'You are already registered!',
 ];

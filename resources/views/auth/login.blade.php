@@ -13,16 +13,16 @@
                                     @csrf
 
                                     <div data-mdb-input-init class="form-outline mb-4">
-                                        <input type="email" id="email" name="email" value="{{old('email')}}" class="form-control form-control-lg" />
                                         <label class="form-label" for="email">{{__('trans.Email')}}</label>
+                                        <input type="email" id="email" name="email" value="{{old('email')}}" class="form-control form-control-lg" />
                                         @error('email')
                                         <p class="text-danger text text-sm-left">{{$message}}</p>
                                         @enderror
                                     </div>
 
                                     <div data-mdb-input-init class="form-outline mb-4">
-                                        <input type="password" id="password" name="password" value="{{old('password')}}" class="form-control form-control-lg" />
                                         <label class="form-label" for="password">{{__('trans.Password')}}</label>
+                                        <input type="password" id="password" name="password" value="{{old('password')}}" class="form-control form-control-lg" />
                                         @error('password')
                                         <p class="text-danger text text-sm-left">{{$message}}</p>
                                         @enderror

@@ -49,8 +49,8 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mx-auto py-0">
-                <a href="/" class="nav-item nav-link active">{{__('trans.Home') }}</a>
-                <a href="/customer" class="nav-item nav-link">{{ __('trans.Conferences') }}</a>
+                <a href="{{route('home')}}" class="nav-item nav-link active">{{__('trans.Home') }}</a>
+                <a href="{{route('conference.index')}}" class="nav-item nav-link">{{ __('trans.Conferences') }}</a>
 
             </div>
             @auth

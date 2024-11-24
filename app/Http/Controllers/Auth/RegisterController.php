@@ -24,7 +24,7 @@ class RegisterController extends Controller
         $user->fill($validated);
         $user->save();
         Auth::login($user);
-        $user->assignRole('user');
+        $user->assignRole('employee');
         return redirect('/');
 
     }
